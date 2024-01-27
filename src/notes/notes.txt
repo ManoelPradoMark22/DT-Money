@@ -21,3 +21,20 @@ por padrao a tag strong vem com o display inline - nesse, nao tem como aplicar m
   usa o collapse separate para poder espacar as linhas e colunas
   border-collapse: separate;
   border-spacing: 0 0.5rem;  // horizontal (colunas) , vertical (linhas)
+
+  ______________
+  libs de acessibilidade:
+   - ariakit, 
+   - headlessui
+   - radix-ui  -> os components seguem as normas de acessibilidade
+   - chakraui (mas esse ja vem estilizado)
+
+  as Child -> vai fazer com que o Dialog.Trigger nao crie um novo botao, mas que aproveite o botao dentro da tag (q nós criamos)
+  <Dialog.Trigger asChild>
+    <NewTransactionBtn>Nova transação</NewTransactionBtn>
+  </Dialog.Trigger>
+
+  ______________
+
+  Dialog.Portal (do React)  
+  fornece uma forma ELEGANTE de renderizar um elemento filho dentro de um OUTRO local da DOM
