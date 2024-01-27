@@ -5,3 +5,13 @@
     background: ${props => props.theme['green-700']};
     transition: background-color 0.2s; //animacao acontece somente no hover
   }
+
+  ______________
+
+por padrao a tag strong vem com o display inline - nesse, nao tem como aplicar margin vertical
+, por isso mudamos para o block nesse caso
+  strong {
+    display: block;
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
