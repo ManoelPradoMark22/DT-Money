@@ -1,0 +1,7 @@
+  //fora:
+  transition: background-color 0.2s; //animacao acontece no hover e quando retira o mouse tb
+  
+  &:hover {
+    background: ${props => props.theme['green-700']};
+    transition: background-color 0.2s; //animacao acontece somente no hover
+  }
