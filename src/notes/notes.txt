@@ -15,3 +15,9 @@ por padrao a tag strong vem com o display inline - nesse, nao tem como aplicar m
     margin-top: 1rem;
     font-size: 2rem;
   }
+
+  ______________
+
+  usa o collapse separate para poder espacar as linhas e colunas
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;  // horizontal (colunas) , vertical (linhas)
