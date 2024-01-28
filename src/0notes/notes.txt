@@ -138,3 +138,8 @@ fetch
   useEffect(async () => {
     //code
   }, [])
+
+  ______________
+
+  <p>olá                          dasdasd</p> // assim renderiza apenas 1 espaço
+  <p>olá &nbsp;&nbsp;&nbsp;&nbsp; dasdasd</p> // assim renderiza os espacos
