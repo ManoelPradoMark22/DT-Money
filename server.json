@@ -2,9 +2,9 @@
   "transactions": [
     {
       "id": 1,
-      "description": "Desenvolvimento de site",
+      "description": "Site Development",
       "type": "income",
-      "category": "Venda",
+      "category": "Freela",
       "price": 14000,
       "createdAt": "2024-01-28T19:54:29.564Z"
     },
@@ -23,6 +23,22 @@
       "category": "Lazer",
       "price": 50,
       "createdAt": "2024-01-05T15:23:29.564Z"
+    },
+    {
+      "id": 4,
+      "description": "Aluguel",
+      "type": "outcome",
+      "category": "Casa",
+      "price": 1250,
+      "createdAt": "2024-01-10T15:23:29.564Z"
+    },
+    {
+      "id": 5,
+      "description": "Salário",
+      "type": "income",
+      "category": "Job",
+      "price": 2100,
+      "createdAt": "2024-01-01T15:23:29.564Z"
     }
   ]
 }

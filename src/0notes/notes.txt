@@ -79,12 +79,11 @@ fixando nosso modalno centro
 
    npx json-server server.json -d 500   //adiciona um delay de 500ms nas requisicoes
 
-   antes você precisava passar o -w para ficar observando. hj nao é preciso mais!!
-   --watch/-w can be omitted, JSON Server 1+ watches for file changes by default
    npx json-server server.json -w   //modo watch -> ele monitora as mudancas no arquivo e atualiza automaticamente o servidor
 
   npx json-server server.json -p 3333    // rodar em uma porta
 
+   //para a versao @0.17.4vou usar assim: npx json-server server.json -w -d 500 
 
   https://github.com/typicode/json-server
 
