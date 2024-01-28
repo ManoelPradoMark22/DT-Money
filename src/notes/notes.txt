@@ -63,3 +63,11 @@ fixando nosso modalno centro
   entao, para que, por exemplo, o icone dentro do botao nao fique desalinhado levemnte na horizontal, 
   aplicamos o seguinte estilo no BOTAO (assim o icone centraliza):
   line-height: 0;  // ou // font-size: 0;
+
+  ______________
+
+  no css, podemos pegar um atributo do HTML, como exemplo, o atributo data-state do check box do radix
+  assim, podemos fazer estilizações dinamicas, de acordo com o checkbox selecionado ou nao
+  &[data-state='checked'] {
+    
+  }

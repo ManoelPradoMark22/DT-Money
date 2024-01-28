@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import * as Dialog from "@radix-ui/react-dialog";
+import * as RadioGroup from "@radix-ui/react-radio-group";
+import { css } from "styled-components";
 
 export const Overlay = styled(Dialog.Overlay)`
   position: fixed;
@@ -48,6 +50,7 @@ export const Content = styled(Dialog.Content)`
       padding: 0 1.25rem;
       border-radius: 6px;
       margin-top: 1.5rem;
+      user-select: none;
 
       cursor: pointer;
 
@@ -68,19 +71,26 @@ export const CloseBtn = styled(Dialog.Close)`
   cursor: pointer;
   color: ${props => props.theme['gray-500']};
   line-height: 0;
+  user-select: none;
 `
 
-export const TransactionType = styled.div`
+export const TransactionType = styled(RadioGroup.Root)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 0.5rem;
+  user-select: none;
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
 `
 interface TransactionTypeBtnProps {
   variant: 'income' | 'outcome'
 }
 
-export const TransactionTypeBtn = styled.button<TransactionTypeBtnProps>`
+export const TransactionTypeBtn = styled(RadioGroup.Item)<TransactionTypeBtnProps>`
   background: ${props => props.theme['gray-700']};
   color: ${props => props.theme['gray-300']};
   padding: 1rem;
@@ -96,8 +106,25 @@ export const TransactionTypeBtn = styled.button<TransactionTypeBtnProps>`
     color: ${props => props.variant === 'income' ? props.theme['green-300'] : props.theme['red-300']};
   }
 
-  &:hover{
-    background: ${props => props.theme['gray-600']};
-    transition: background-color 0.2s;
+  &[data-state='unchecked'] {
+    &:hover{
+      background: ${props => props.theme['gray-600']};
+      transition: background-color 0.2s;
+    }
   }
+
+  &[data-state='checked'] {
+    color: ${props => props.theme['white']};
+    background: ${props => props.value === 'income' ? props.theme['green-500'] : props.theme['red-500']};
+
+    svg {
+      color: ${props => props.theme['white']};
+    }
+  }
+
+  ${props => props.variant === 'outcome' && css`
+      &:focus {
+        box-shadow: 0 0 0 2px ${props.theme['red-500']};
+      }
+  `};
 `
