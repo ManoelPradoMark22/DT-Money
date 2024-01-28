@@ -71,3 +71,29 @@ fixando nosso modalno centro
   &[data-state='checked'] {
     
   }
+
+  ______________
+  rodar o json server
+
+   npx json-server server.json
+
+   npx json-server server.json -d 500   //adiciona um delay de 500ms nas requisicoes
+
+   antes você precisava passar o -w para ficar observando. hj nao é preciso mais!!
+   --watch/-w can be omitted, JSON Server 1+ watches for file changes by default
+   npx json-server server.json -w   //modo watch -> ele monitora as mudancas no arquivo e atualiza automaticamente o servidor
+
+  npx json-server server.json -p 3333    // rodar em uma porta
+
+
+  https://github.com/typicode/json-server
+
+  http://localhost:3000/transactions/?_sort=createdAt   //padrao crescente (asc)
+  http://localhost:3000/transactions/?_sort=createdAt&_order=desc
+multiples fileds, separate them with comma 
+
+________________________
+
+Por padrão o JSON Server agora está disponibilizando a versão alpha, que ainda está instável e faltam várias funcionalidades. Sugerimos instalar a versão estável com o comando:
+
+npm i -D json-server@0.17.4
