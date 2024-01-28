@@ -71,6 +71,22 @@
       "price": 120,
       "createdAt": "2024-01-29T01:08:17.449Z",
       "id": 9
+    },
+    {
+      "description": "Testando",
+      "type": "income",
+      "category": "Teste",
+      "price": 22,
+      "createdAt": "2024-01-29T01:40:33.763Z",
+      "id": 10
+    },
+    {
+      "description": "testetesteteste",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 232,
+      "createdAt": "2024-01-29T01:41:00.391Z",
+      "id": 11
     }
   ]
 }

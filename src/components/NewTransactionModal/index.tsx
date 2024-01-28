@@ -16,7 +16,11 @@ const newTransactionFormSchema = z.object({
 
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>;
 
-export function NewTransactionModal() {
+interface NewTransactionModalProps {
+  closeModal: () => void
+}
+
+export function NewTransactionModal({ closeModal }: NewTransactionModalProps) {
   const { createTransaction } = useContext(TransactionsContext);
 
   const {
@@ -42,6 +46,7 @@ export function NewTransactionModal() {
       price,
     })
 
+    closeModal();
     reset()
   }
 
