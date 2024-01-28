@@ -1,6 +1,8 @@
 export const defaultTheme = {
   white: '#fff',
 
+  'overlay': 'rgba(0, 0, 0, 0.75)',
+
   'gray-100': '#E1E1E6',
   'gray-300': '#C4C4CC',
   'gray-400': '#8D8D99',

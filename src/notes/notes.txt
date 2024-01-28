@@ -38,3 +38,28 @@ por padrao a tag strong vem com o display inline - nesse, nao tem como aplicar m
 
   Dialog.Portal (do React)  
   fornece uma forma ELEGANTE de renderizar um elemento filho dentro de um OUTRO local da DOM
+
+
+  ______________
+
+  inset: 0; -> é o mesmo que:
+
+      bottom: 0;
+      top:0;
+      left:0;
+      roght:0;
+
+  ______________
+
+fixando nosso modalno centro
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  ______________
+
+  o Focus do botao é relativo ao FONTSIZE do botao!!
+  entao, para que, por exemplo, o icone dentro do botao nao fique desalinhado levemnte na horizontal, 
+  aplicamos o seguinte estilo no BOTAO (assim o icone centraliza):
+  line-height: 0;  // ou // font-size: 0;
