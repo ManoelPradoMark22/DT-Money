@@ -45,8 +45,32 @@
       "description": "Pizza",
       "type": "outcome",
       "category": "Alimentação",
-      "price": 44.30,
+      "price": 44.3,
       "createdAt": "2024-01-03T12:54:29.564Z"
+    },
+    {
+      "description": "exemplo",
+      "type": "outcome",
+      "category": "Teste",
+      "price": 2,
+      "createdAt": "2024-01-29T00:54:33.639Z",
+      "id": 7
+    },
+    {
+      "description": "Pastel",
+      "type": "outcome",
+      "category": "Alimentação",
+      "price": 5,
+      "createdAt": "2024-01-29T00:58:30.861Z",
+      "id": 8
+    },
+    {
+      "description": "Mouse",
+      "type": "outcome",
+      "category": "Informática",
+      "price": 120,
+      "createdAt": "2024-01-29T01:08:17.449Z",
+      "id": 9
     }
   ]
 }
