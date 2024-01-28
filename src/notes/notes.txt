@@ -97,3 +97,45 @@ ________________________
 Por padrão o JSON Server agora está disponibilizando a versão alpha, que ainda está instável e faltam várias funcionalidades. Sugerimos instalar a versão estável com o comando:
 
 npm i -D json-server@0.17.4
+
+
+______________
+
+fetch
+
+  useEffect(() => {
+    fetch('http://localhost:3000/transactions')
+      .then(res => res.text())
+      .then(data => console.log(data))
+  }, [])
+
+  //or
+
+  useEffect(() => {
+    fetch('http://localhost:3000/transactions')
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }, [])
+
+
+  ______________
+
+  como chamar uma funcao async no useEffect (crie ela fora!)
+
+  async function loadTransactions() {
+    const response = await fetch('http://localhost:3000/transactions');
+    const data = await response.json();
+
+    console.log(data);
+  }
+  
+  useEffect(() => {
+    loadTransactions();
+  }, [])
+
+  isso pq, a funcao callback do useEffect nao pode ser asyn!!
+
+  Assim daria erro:
+  useEffect(async () => {
+    //code
+  }, [])
