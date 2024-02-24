@@ -87,6 +87,22 @@
       "price": 232,
       "createdAt": "2024-01-29T01:41:00.391Z",
       "id": 11
+    },
+    {
+      "description": "3213123",
+      "type": "outcome",
+      "category": "323123",
+      "price": 32133,
+      "createdAt": "2024-02-24T22:41:28.166Z",
+      "id": 12
+    },
+    {
+      "description": "weqwe",
+      "type": "income",
+      "category": "dasdsad",
+      "price": 232,
+      "createdAt": "2024-02-24T22:41:46.705Z",
+      "id": 13
     }
   ]
 }
