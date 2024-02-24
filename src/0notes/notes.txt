@@ -20,18 +20,51 @@ Quando o React entra no fluxo de renderização e estamos usando o Memo, temos o
 Obs.: Mas, use o memo em estruturas complexas!! para componentes simples, às vezes o memo vai ser mais lento (por fazer o deep comparison) do que se ele seguisse com o fluxo original de recirar o html!!!
 
 
-Exemplo:
+ - Exemplo memo para um component / funcao (nesse nosso exemplo abaixo nao precisaria, por ser bem simples):
+    https://github.com/ManoelPradoMark22/DT-Money/commit/1780ac0ce33f33a048f48da700ba7622edf1b681
 
-function SearchFormComponent() {
-  const fetchTransactions = useContextSelector(
-    TransactionsContext,
-    (context) => {
-      return context.fetchTransactions
-    },
-  )
-......
+    function SearchFormComponent() {
+      const fetchTransactions = useContextSelector(
+        TransactionsContext,
+        (context) => {
+          return context.fetchTransactions
+        },
+      )
+    ......
 
-export const SearchForm = memo(SearchFormComponent)
+    export const SearchForm = memo(SearchFormComponent)
+  
+ - Exemplo memo para uma variável
+
+ export function useSummary() {
+  const transactions = useContextSelector(TransactionsContext, (context) => {
+    return context.transactions
+  })
+
+  const summary = useMemo(() => {
+    return transactions.reduce(
+      (acc, transaction) => {
+        if (transaction.type === 'income') {
+          acc.income += transaction.price
+          acc.total += transaction.price
+        } else {
+          acc.outcome += transaction.price
+          acc.total -= transaction.price
+        }
+
+        return acc
+      },
+      {
+        income: 0,
+        outcome: 0,
+        total: 0,
+      },
+    )
+  }, [transactions])
+
+  return summary
+}
+ -> variável summary so vai ser recriada quando o transactions mudar (antes a variavel summary era recriada toda vez que o useSummary() fosse renderizado novamente - por exemplo, sempre q os componentes pais do useSummary() renderizavam, nossa variavel summary tb mudava - agr evitamos esse incômodo)
 
 ________________________
 
