@@ -34,7 +34,10 @@ Obs.: Mas, use o memo em estruturas complexas!! para componentes simples, às ve
 
     export const SearchForm = memo(SearchFormComponent)
   
+
+  
  - Exemplo memo para uma variável
+ https://github.com/ManoelPradoMark22/DT-Money/commit/6c3581b569420c015aad9b3d35fefd5b4da4ef31
 
  export function useSummary() {
   const transactions = useContextSelector(TransactionsContext, (context) => {
