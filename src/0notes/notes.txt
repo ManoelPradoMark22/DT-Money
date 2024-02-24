@@ -1,3 +1,42 @@
+/* 
+Pq o component renderiza?
+
+- Hooks changed (estado, contexto, reducer...)
+- Props changed (propriedades)
+- Parent rerendered (component pai renderizou)
+
+Qual o fluxo de renrização? (mto rápido, mas caso o componente for muito extenso, como uma lista grande, ai pode ter uma lentidão)
+  1. O react recria o HTML da interface do componente (recria na memória)
+  2. Compara a versão do HTML recriada com a versão anterior
+  3. Se mudou algo, o React reescreve o HTML na tela
+*/
+
+Memo:
+Quando o React entra no fluxo de renderização e estamos usando o Memo, temos o passo 0(zero) q antecede a dos passos anteriores:
+  0. Hooks changed? or Props changed?  -> Deep comparison
+    0.1: Comparar a versão anterior dos hooks e props
+    0.2: Se mudou algo, ele vai permitir a nova renderização (e entao segue para o fluxo anterior q vimos acima 1..) - Mas se nao mudou, ele nem vai para lá e encerra aqui
+
+Obs.: Mas, use o memo em estruturas complexas!! para componentes simples, às vezes o memo vai ser mais lento (por fazer o deep comparison) do que se ele seguisse com o fluxo original de recirar o html!!!
+
+
+Exemplo:
+
+function SearchFormComponent() {
+  const fetchTransactions = useContextSelector(
+    TransactionsContext,
+    (context) => {
+      return context.fetchTransactions
+    },
+  )
+......
+
+export const SearchForm = memo(SearchFormComponent)
+
+________________________
+
+
+
   //fora:
   transition: background-color 0.2s; //animacao acontece no hover e quando retira o mouse tb
   
